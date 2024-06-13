@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nota</title>
+</head>
+<body>
+    <p>Cadastro Usúario</p>
+    <hr>
+    <form method="post" action="resul.PHP" id="cadastroForm">
+    <label>Nome</label>
+        <input ty   pe="text" name="nome" id="nome" placeholder="Digite seu Nome">
+    <hr>
+    <label>Materia</label>
+        <input type="text" name="materia" id="materia" placeholder="Digite a materia">
+    <hr>
+    <label>1° Bimestre</label>
+        <input type="text" name="bim1" id="bim1" placeholder="Digite a nota do 1° Bimestre">
+    <hr>
+    <label>2° Bimestre</label>
+        <input type="text" name="bim2" id="bim2" placeholder="Digite a nota do 2° Bimestre">
+    <hr>
+    <label>3° Bimestre</label>
+        <input type="text" name="bim3" id="bim3" placeholder="Digite a nota do 3° Bimestre">
+    <hr>
+    <label>4° Bimestre</label>
+        <input type="text" name="bim4" id="bim4" placeholder="Digite a nota do 4° Bimestre">
+    <hr>
+    <button type="button" onclick="validarFormulario()">Cadastrar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var bim1 = parseFloat(document.getElementById('bim1').value);
+            var bim2 = parseFloat(document.getElementById('bim2').value);
+            var bim3 = parseFloat(document.getElementById('bim3').value);
+            var bim4 = parseFloat(document.getElementById('bim4').value);
+
+            // Verificar os valores
+            if (isNaN(bim1) || bim1 < 0 || bim1 > 10) {
+                alert("Insira um valor válido entre 0 e 10 para o 1° Bimestre.");
+                return false;
+            }
+
+            if (isNaN(bim2) || bim2 < 0 || bim2 > 10) {
+                alert("Insira um valor válido entre 0 e 10 para o 2° Bimestre.");
+                return false;
+            }
+
+            if (isNaN(bim3) || bim3 < 0 || bim3 > 10) {
+                alert("Insira um valor válido entre 0 e 10 para o 3° Bimestre.");
+                return false;
+            }
+
+            if (isNaN(bim4) || bim4 < 0 || bim4 > 10) {
+                alert("Insira um valor válido entre 0 e 10 para o 4° Bimestre.");
+                return false;
+            }
+
+            // Se tudo estiver correto, submeter o formulário
+            document.getElementById('cadastroForm').submit();
+        }
+    </script>
+    
+</body>
+</html>
